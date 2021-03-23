@@ -23,28 +23,67 @@ const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [cart, setCart] = useState<Product[]>(() => {
-    // const storagedCart = Buscar dados do localStorage
+    const storagedCart = localStorage.getItem('@RocketShoes:cart');
 
-    // if (storagedCart) {
-    //   return JSON.parse(storagedCart);
-    // }
+    if (storagedCart) {
+      return JSON.parse(storagedCart);
+    }
 
     return [];
   });
 
   const addProduct = async (productId: number) => {
     try {
-      // TODO
+      const productStock = await api.get(`/stock/${productId}`)
+      
+      const productInCart = cart.find((product) => product.id === productId);
+      
+      if (!productInCart) {
+        if (productStock.data.amount > 0) {
+          const productInformation = await api.get(`/products/${productId}`);
+          const newProductOnCart = {...productInformation.data, amount: 1};
+          const newCart = [...cart, newProductOnCart];
+
+          setCart(newCart);
+          localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
+          toast.success('Adicionado');
+        } else {
+          toast.error('Quantidade solicitada fora de estoque');
+        }
+      }
+
+      if (productInCart) {
+        if (productStock.data.amount > productInCart.amount) {
+          const updatedCart = cart.map(item => item.id === productInCart.id ? {
+            ...item,
+            amount: item.amount + 1
+          } : item);
+          
+          setCart(updatedCart);
+          localStorage.setItem('@RocketShoes:cart', JSON.stringify(updatedCart));
+          toast.success('Adicionado');
+        } else {
+          toast.error('Quantidade solicitada fora de estoque');
+        }
+      }
     } catch {
-      // TODO
+      toast.error('Erro na adição do produto');
     }
   };
 
   const removeProduct = (productId: number) => {
     try {
-      // TODO
+      const productInCart = cart.find((product) => product.id === productId);
+
+      if (!productInCart) {
+        toast.error('Erro na remoção do produto');
+      }
+
+      if (productInCart) {
+
+      }
     } catch {
-      // TODO
+      toast.error('Erro na remoção do produto');
     }
   };
 
