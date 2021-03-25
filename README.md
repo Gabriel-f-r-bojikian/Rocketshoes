@@ -1,3 +1,7 @@
+<h1 align="center">
+	<img alt="Rocketshoes" title="Rocketshoes" src="./src/assets/images/rocketshoes_logo_readme.png" />
+</h1>
+
 # Rocketshoes
 
 ![Badge](https://img.shields.io/badge/license-MIT-informational?style=for-the-bade)
