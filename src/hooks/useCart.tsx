@@ -80,11 +80,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       if (productInCart) {
-        if (productInCart.amount === 1) {
-          const newCart = cart.filter((product) => product.id !== productInCart.id)
-          setCart(newCart);
-          localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
-        }
+        const newCart = cart.filter((product) => product.id !== productInCart.id)
+        setCart(newCart);
+        localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
       }
     } catch {
       toast.error('Erro na remoção do produto');
