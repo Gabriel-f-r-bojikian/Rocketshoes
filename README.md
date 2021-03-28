@@ -5,22 +5,23 @@
 # Rocketshoes
 
 ![Badge](https://img.shields.io/badge/license-MIT-informational?style=for-the-bade)
-![Badge](https://img.shields.io/badge/Node.JS-v17.0.1-339933?logo=node.js) ![Badge](https://img.shields.io/badge/React-v17.0.1-61dafb?logo=react) ![Badge](https://img.shields.io/badge/TypeScript-v4.1.3-3178c6?logo=typescript) ![Badge](https://img.shields.io/badge/status-completed-green)
+![Badge](https://img.shields.io/badge/Node.JS-v14.16.0-339933?logo=node.js) ![Badge](https://img.shields.io/badge/React-v17.0.1-61dafb?logo=react) ![Badge](https://img.shields.io/badge/TypeScript-v4.1.3-3178c6?logo=typescript) ![Badge](https://img.shields.io/badge/status-completed-green)
 
 ## About
 This repository contains the second challenge task to be completed for Rocketseat's Ignite Bootcamp, class 01. 
 
 The challenge is creating a __e-commerce web page__ with a __fully functional client cart__. The theme for this shop is shoes!
 # Table of contents
-* [About](#about)
-* [Table of contents](#table-of-contents)
-* [Status](#status)
-* [Features](#features)
-* [How to install and run this application](#how-to-install-and-run-this-application)
-	* [Prerequisites](#prerequisites)
-	* [Installing and running](#installing-and-running)
-* [Techs utilized](#techs-utilized)
-* [Author and acknowledgements](#author-and-acknowledgements)
+- [Rocketshoes](#rocketshoes)
+	- [About](#about)
+- [Table of contents](#table-of-contents)
+- [Status](#status)
+- [Features](#features)
+- [How to install and run this application](#how-to-install-and-run-this-application)
+	- [Prerequisites](#prerequisites)
+	- [Installing and running](#installing-and-running)
+- [Techs utilized](#techs-utilized)
+- [Author and Acknowledgements](#author-and-acknowledgements)
 # Status
 This challenge is completed and delivered to specifications. It passed all automated tests and implements all the features asked. ✅
 # Features
